@@ -1,0 +1,339 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Open Sans';
+    font-weight: 100;
+    overflow: hidden;
+    /* outline: 1px solid rgba(0, 0, 0, 0.47); */
+}
+
+html {
+    background-color: #191919;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Nav icon and animation */
+
+nav {
+    position: absolute;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    background-color: rgba(25, 25, 25, 0.7);
+    width: 100px;
+    height: 100px;
+    right: 0;
+    cursor: pointer;
+    z-index: 5;
+    overflow: visible;
+    transition: .5s;
+}
+
+#nav-icon {
+    position: relative;
+    top: 35px;
+    left: 13px;
+    width: 60px;
+    height: 60px;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    overflow: visible;
+}
+
+#nav-icon span {
+    display: block;
+    position: relative;
+    height: 3px;
+    width: 40px;
+    background: white;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+}
+
+#nav-icon span:nth-child(1) {
+    top: 0px;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+}
+
+#nav-icon span:nth-child(2) {
+    top: 10px;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+}
+
+#nav-icon span:nth-child(3) {
+    top: 20px;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+}
+
+#nav-icon.open span:nth-child(1) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    top: -2px;
+    left: 8px;
+}
+
+#nav-icon.open span:nth-child(2) {
+    width: 0%;
+    opacity: 0;
+}
+
+#nav-icon.open span:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    top: 20px;
+    left: 8px;
+}
+
+
+/* Navigation links */
+
+ul {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    position: absolute;
+    right: 8vw;
+    visibility: hidden;
+    opacity: 0;
+    transition: .2s;
+    z-index: 2;
+}
+
+li {
+    font-size: 1.3vw;
+    text-transform: uppercase;
+    color: white;
+    line-height: 70px;
+    list-style-type: none;
+    text-align: left;
+}
+
+li a {
+    color: white;
+    text-decoration: none;
+}
+
+li a:hover {
+    cursor: pointer;
+    border-bottom: 1px solid white;
+}
+
+.show-text {
+    visibility: visible;
+    opacity: 1;
+    transition: 1.7s;
+}
+
+
+/* Portfolio logo */
+
+.logo {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    left: -190px;
+    width: 500px;
+    height: 125px;
+    background-color: rgba(25, 25, 25, 0.7);
+    color: white;
+    z-index: 1;
+    transform: rotate(-90deg);
+}
+
+h1 {
+    font-weight: 100;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 5px;
+    margin-left: 45px;
+}
+
+h2 {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 22px;
+    letter-spacing: 10px;
+    margin-left: 45px;
+}
+
+.slider-counter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    background-color: rgba(25, 25, 25, 0.7);
+    position: absolute;
+    color: white;
+    font-weight: 100;
+    font-size: 40px;
+    bottom: 0;
+    text-align: center;
+    z-index: 5;
+}
+
+.slider-current {
+    position: absolute;
+    width: 20px;
+    top: 25px;
+    left: 15px;
+    font-weight: 700;
+    font-size: 20px;
+    text-align: right;
+    overflow: visible;
+    transition: .5s;
+}
+
+.text-transition {
+    transform: scale(1.05);
+    transition: .5s;
+}
+
+.slider-length {
+    position: absolute;
+    font-weight: 700;
+    font-size: 20px;
+    bottom: 25px;
+    right: 15px;
+}
+
+
+/* Content section */
+
+.content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    perspective: 300px;
+    transition: .5s;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    perspective: 300px;
+    width: 100vw;
+    height: 100vh;
+    transition: .5s;
+    box-shadow: -10px 10px 60px 10px black;
+}
+
+img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    user-select: none;
+    transition: .6s;
+}
+
+.hide-img {
+    opacity: 0;
+    transition: .6s;
+}
+
+.prev {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    left: -70px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #191919;
+    transform: rotate(180deg);
+    z-index: 1;
+}
+
+.next {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    right: -70px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: rgba(25, 25, 25, 0.7);
+    z-index: 1;
+}
+
+.arrow {
+    position: absolute;
+    left: 20px;
+    width: 30px;
+    height: 30px;
+    border-top: 3px solid white;
+    border-right: 3px solid white;
+    transform: rotate(45deg);
+}
+
+.prev-btn {
+    position: absolute;
+    height: 100vh;
+    width: 50vw;
+    cursor: url('../images/prev.png'), auto;
+    left: 0;
+    z-index: 1;
+}
+
+.next-btn {
+    position: absolute;
+    height: 100vh;
+    width: 50vw;
+    cursor: url('../images/next.png'), auto;
+    right: 0;
+    z-index: 1;
+}
+
+.skew {
+    /* border: 25px solid white; */
+    transform: scale(0.7) rotateY(3deg) translateX(2vw);
+    transition: .5s;
+}
+
+.color {
+    background-color: white;
+    transition: .5s;
+}
