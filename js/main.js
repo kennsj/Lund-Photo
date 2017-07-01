@@ -14,6 +14,7 @@ var imgArray = [
 ]
 */
 
+/*
 
 var imgArray = [
     'images/2fugler.jpg',
@@ -28,6 +29,21 @@ var imgArray = [
     'images/ramme.jpg',
     'images/silhouette.jpg'
 ]
+
+*/
+
+// Preload images
+
+var imgArray = new Array('images/2fugler.jpg', 'images/blomst_bw.jpg', 'images/fjaera.jpg', 'images/fjaera.jpg', 'images/flue.jpg', 'images/fugl-macro.jpg', 'images/fugl.jpg', 'images/fugler.jpg', 'images/hav.jpg', 'images/mane.jpg', 'images/ramme.jpg', 'images/silhouette.jpg');
+var imagesLoaded = new Number(0);
+
+document.addEventListener("DOMContentLoaded", init, false);
+
+function init() {
+    var images = new Array();
+}
+
+// Scripts for image gallery
 
 document.querySelector('img').src = imgArray[0]
 
@@ -55,9 +71,6 @@ function nextImg() {
 
         i = 0;
         document.querySelector('img').classList.add('hide-img');
-        setTimeout(function(){
-            document.querySelector('img').src = none;
-        })
 
         setTimeout(function () {
             document.querySelector('img').classList.remove('hide-img');
@@ -71,9 +84,6 @@ function nextImg() {
         i++;
 
         document.querySelector('img').classList.add('hide-img');
-        setTimeout(function(){
-            document.querySelector('img').src = none;
-        })
 
         setTimeout(function () {
             document.querySelector('img').classList.remove('hide-img');
@@ -82,9 +92,6 @@ function nextImg() {
 
             slideCurrent.textContent = i + 1;
         }, 500);
-
-
-
     }
 }
 
@@ -94,9 +101,6 @@ function prevImg() {
         i = imgArray.length - 1;
 
         document.querySelector('img').classList.add('hide-img');
-        setTimeout(function(){
-            document.querySelector('img').src = none;
-        })
 
         setTimeout(function () {
             document.querySelector('img').classList.remove('hide-img');
@@ -110,9 +114,6 @@ function prevImg() {
         i--;
 
         document.querySelector('img').classList.add('hide-img');
-        setTimeout(function(){
-            document.querySelector('img').src = none;
-        })
 
         setTimeout(function () {
             document.querySelector('img').classList.remove('hide-img');
@@ -120,10 +121,10 @@ function prevImg() {
 
             slideCurrent.textContent = i + 1;
         }, 500)
-
     }
 }
 
+// Show/hide navigation and skew content
 
 var content = document.querySelector('.content')
 var nav = document.querySelector('nav')
