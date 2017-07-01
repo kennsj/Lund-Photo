@@ -1,4 +1,4 @@
-/*
+
 var imgArray = [
     'https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-441840.jpg',
     'https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-531657.jpg',
@@ -12,9 +12,9 @@ var imgArray = [
     'https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-297823.jpg',
     'https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-294660.jpg'
 ]
-*/
 
 
+/*
 var imgArray = [
     'images/2fugler.jpg',
     'images/blomst_bw.jpg',
@@ -28,6 +28,7 @@ var imgArray = [
     'images/ramme.jpg',
     'images/silhouette.jpg'
 ]
+*/
 
 document.querySelector('img').src = imgArray[0]
 
@@ -42,61 +43,76 @@ slideCurrent.textContent = i + 1;
 slideLength.textContent = imgArray.length;
 
 next.addEventListener('mousedown', function () {
+    nextImg()
+})
 
+prev.addEventListener('mousedown', function () {
+    prevImg()
+})
+
+
+function nextImg() {
     if (i === imgArray.length - 1) {
 
         i = 0;
         document.querySelector('img').classList.add('hide-img');
-        document.querySelector('img').src = imgArray[i];
+
         setTimeout(function () {
             document.querySelector('img').src = imgArray[i];
             document.querySelector('img').classList.remove('hide-img');
+
+            slideCurrent.textContent = i + 1;
         }, 500);
-        slideCurrent.textContent = i + 1;
 
     } else {
 
         i++;
+
         document.querySelector('img').classList.add('hide-img');
+
         setTimeout(function () {
-            document.querySelector('img').src = imgArray[i];
             document.querySelector('img').classList.remove('hide-img');
+            document.querySelector('img').src = imgArray[i];
+
+
+            slideCurrent.textContent = i + 1;
         }, 500);
-        slideCurrent.textContent = i + 1;
+
+
 
     }
-})
+}
 
-prev.addEventListener('mousedown', function () {
-
+function prevImg() {
     if (i === 0) {
 
         i = imgArray.length - 1;
-        document.querySelector('img').classList.add('hide-img');
-        setTimeout(function () {
-            document.querySelector('img').src = imgArray[i];
-            document.querySelector('img').classList.remove('hide-img');
-        }, 500);
 
-        slideCurrent.textContent = i + 1;
+        document.querySelector('img').classList.add('hide-img');
+
         setTimeout(function () {
+            document.querySelector('img').classList.remove('hide-img');
             document.querySelector('img').src = imgArray[i];
-            document.querySelector('img').classList.add('text-transition');
-        }, 500);
+
+            slideCurrent.textContent = i + 1;
+        }, 500)
 
     } else {
 
         i--;
+
         document.querySelector('img').classList.add('hide-img');
+
         setTimeout(function () {
-            document.querySelector('img').src = imgArray[i];
             document.querySelector('img').classList.remove('hide-img');
-        }, 500);
-        slideCurrent.textContent = i + 1;
+            document.querySelector('img').src = imgArray[i];
+
+            slideCurrent.textContent = i + 1;
+        }, 500)
 
     }
+}
 
-})
 
 var content = document.querySelector('.content')
 var nav = document.querySelector('nav')
