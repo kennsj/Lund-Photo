@@ -55,10 +55,13 @@ function nextImg() {
 
         i = 0;
         document.querySelector('img').classList.add('hide-img');
+        setTimeout(function(){
+            document.querySelector('img').src = none;
+        })
 
         setTimeout(function () {
-            document.querySelector('img').src = imgArray[i];
             document.querySelector('img').classList.remove('hide-img');
+            document.querySelector('img').src = imgArray[i];
 
             slideCurrent.textContent = i + 1;
         }, 500);
@@ -68,6 +71,9 @@ function nextImg() {
         i++;
 
         document.querySelector('img').classList.add('hide-img');
+        setTimeout(function(){
+            document.querySelector('img').src = none;
+        })
 
         setTimeout(function () {
             document.querySelector('img').classList.remove('hide-img');
@@ -88,6 +94,9 @@ function prevImg() {
         i = imgArray.length - 1;
 
         document.querySelector('img').classList.add('hide-img');
+        setTimeout(function(){
+            document.querySelector('img').src = none;
+        })
 
         setTimeout(function () {
             document.querySelector('img').classList.remove('hide-img');
@@ -101,6 +110,9 @@ function prevImg() {
         i--;
 
         document.querySelector('img').classList.add('hide-img');
+        setTimeout(function(){
+            document.querySelector('img').src = none;
+        })
 
         setTimeout(function () {
             document.querySelector('img').classList.remove('hide-img');
