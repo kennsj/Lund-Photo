@@ -1,4 +1,4 @@
-
+/*
 var imgArray = [
     'https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-441840.jpg',
     'https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-531657.jpg',
@@ -12,9 +12,9 @@ var imgArray = [
     'https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-297823.jpg',
     'https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-294660.jpg'
 ]
+*/
 
 
-/*
 var imgArray = [
     'images/2fugler.jpg',
     'images/blomst_bw.jpg',
@@ -28,7 +28,6 @@ var imgArray = [
     'images/ramme.jpg',
     'images/silhouette.jpg'
 ]
-*/
 
 document.querySelector('img').src = imgArray[0]
 
