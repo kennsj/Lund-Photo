@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
     <link href="https://necolas.github.io/normalize.css/7.0.0/normalize.css" rel="stylesheet">
+    <link href="css/jquery.fullPage.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
 </head>
 
@@ -16,7 +17,6 @@
     <div class="logo">
         <h1>Roger Lund</h1>
         <h2>Photography</h2>
-
     </div>
 
     <nav>
@@ -29,40 +29,52 @@
 
     <ul>
         <li class="link-numbers">01</li>
-        <li><a href="index.html">Home</a></li>
+        <li><a href="#one">Portfolio</a></li>
         <li class="link-numbers">02</li>
-        <li><a href="about.html">About</a></li>
+        <li><a href="#two">About</a></li>
         <li class="link-numbers">03</li>
-        <li><a href="#">Buy</a></li>
+        <li><a href="#three">Buy</a></li>
         <li class="link-numbers">04</li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="#four">Contact</a></li>
     </ul>
 
-    <!--
-    
-    <div class="prev">
-        <div class="arrow"></div>
-    </div>
-    <div class="next">
-        <div class="arrow"></div>
-    </div>
-    
-    -->
+    <div id="fullpage">
+        <div class="content-wrapper section" id="portfolio">
 
 
 
-    <div class="content-wrapper">
-        <div class="content">
 
-            <span class="prev-btn"></span>
-            <span class="next-btn"></span>
+            <div class="image-bg">
 
-            <img src="images/2fugler.jpg">
+                <span class="prev-btn"></span>
+                <span class="next-btn"></span>
 
-            <span class="slider-counter"><span class="slider-current">1</span>&nbsp;/&nbsp;<span class="slider-length">9</span></span>
+                <img src="https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-441840.jpg">
+
+                <span class="slider-counter"><span class="slider-current">1</span>&nbsp;/&nbsp;<span class="slider-length">9</span></span>
+            </div>
         </div>
+
+        <div class="content-wrapper section" id="about">
+            <div class="image-bg"></div>
+        </div>
+
+        <div class="content-wrapper section" id="buy">
+            <div class="image-bg"><img src="images/2fugler.jpg"></div>
+        </div>
+
+        <div class="content-wrapper section" id="contact">
+            <div class="image-bg"><img src="images/2fugler.jpg"></div>
+        </div>
+
+        <div class="content-wrapper section" id="five">
+            <div class="image-bg"><img src="images/2fugler.jpg"></div>
+        </div>
+
     </div>
 
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/jquery.fullPage.min.js"></script>
     <script src="js/slider.js"></script>
 
 

@@ -1,4 +1,11 @@
-/*
+$(document).ready(function () {
+    $('#fullpage').fullpage({
+        anchors: ['one', 'two', 'three', 'four']
+    });
+});
+
+
+
 var imgArray = [
     'https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-441840.jpg',
     'https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-531657.jpg',
@@ -12,10 +19,10 @@ var imgArray = [
     'https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-297823.jpg',
     'https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-294660.jpg'
 ]
-*/
 
 
 
+/*
 var imgArray = [
     'images/2fugler.jpg',
     'images/blomst_bw.jpg',
@@ -30,7 +37,7 @@ var imgArray = [
     'images/silhouette.jpg'
 ]
 
-
+*/
 
 // Preload images
 
@@ -55,6 +62,19 @@ next.addEventListener('mousedown', function () {
 prev.addEventListener('mousedown', function () {
     prevImg()
 })
+
+window.onkeyup = function () {
+    switch (event.keyCode) {
+        case 37:
+        case 40:
+            prevImg();
+            break;
+        case 38:
+        case 39:
+            nextImg();
+            break;
+    }
+}
 
 
 function nextImg() {
@@ -117,12 +137,45 @@ function prevImg() {
 
 // Show/hide navigation and skew content
 
-var content = document.querySelector('.content')
+var content = document.querySelectorAll('.image-bg')
+var html = document.querySelector('html');
 var nav = document.querySelector('nav')
 var links = document.querySelector('ul')
+
+/*
 
 nav.addEventListener('mousedown', function ()  {
     content.classList.toggle('skew');
     document.querySelector('#nav-icon').classList.toggle('open');
     links.classList.toggle('show-text');
+    html.classList.toggle('overflow');
 })
+
+*/
+
+nav.addEventListener('mousedown', () => {
+
+    for (y = 0; y < content.length; y++) {
+
+        content[y].classList.toggle('skew');
+        document.querySelector('#nav-icon').classList.toggle('open');
+        links.classList.toggle('show-text');
+        html.classList.toggle('overflow');
+        console.log(content[i])
+
+        if ($('ul').hasClass('show-text')) {
+            $.fn.fullpage.setAllowScrolling(false);
+            console.log('Disable');
+        } else {
+            $.fn.fullpage.setAllowScrolling(true);
+            console.log('Enable');
+        }
+    }
+})
+
+
+
+// content.classList.toggle('skew');
+// document.querySelector('#nav-icon').classList.toggle('open');
+// links.classList.toggle('show-text');
+// html.classList.toggle('overflow');

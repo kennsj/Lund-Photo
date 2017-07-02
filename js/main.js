@@ -1,4 +1,6 @@
-// Show/hide navigation and skew content
+$(document).ready(function () {
+    $('#fullpage').fullpage();
+});
 
 var content = document.querySelector('.content')
 var nav = document.querySelector('nav')
