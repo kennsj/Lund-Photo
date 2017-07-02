@@ -34,7 +34,7 @@ var imgArray = [
 
 // Preload images
 
-var imgArray = new Array('images/2fugler.jpg', 'images/blomst_bw.jpg', 'images/fjaera.jpg', 'images/fjaera.jpg', 'images/flue.jpg', 'images/fugl-macro.jpg', 'images/fugl.jpg', 'images/fugler.jpg', 'images/hav.jpg', 'images/mane.jpg', 'images/ramme.jpg', 'images/silhouette.jpg');
+var imgArray = new Array('images/2fugler.jpg', 'images/blomst_bw.jpg', 'images/fjaera.jpg', 'images/flue.jpg', 'images/fugl-macro.jpg', 'images/fugl.jpg', 'images/fugler.jpg', 'images/hav.jpg', 'images/mane.jpg', 'images/ramme.jpg', 'images/silhouette.jpg');
 var imagesLoaded = new Number(0);
 
 document.addEventListener("DOMContentLoaded", init, false);
@@ -44,8 +44,8 @@ function init() {
 
     console.log("It will proceed to preload the images.");
 
-    for (i = 0; i < imgArray.length; i++)
-        images[i] = loadImage(imgArray[i]);
+    // for (i = 0; i < imgArray.length; i++)
+    //    images[i] = loadImage(imgArray[i]);
 }
 
 function loadImage(url) {
@@ -87,7 +87,7 @@ prev.addEventListener('mousedown', function () {
 
 
 function nextImg() {
-    if (i === imgArray.length - 1) {
+    if (i == imgArray.length - 1) {
 
         i = 0;
         document.querySelector('img').classList.add('hide-img');
