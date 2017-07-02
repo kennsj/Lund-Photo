@@ -41,7 +41,27 @@ document.addEventListener("DOMContentLoaded", init, false);
 
 function init() {
     var images = new Array();
+
+    console.log("It will proceed to preload the images.");
+
+    for (i = 0; i < imgArray.length; i++)
+        images[i] = loadImage(imgArray[i]);
 }
+
+function loadImage(url) {
+    var image = new Image();
+    image.addEventListener("load", imageLoaded, false);
+    image.src = url;
+    return image;
+}
+
+function imageLoaded() {
+    imagesLoaded++;
+
+    if (imagesLoaded == imgArray.length)
+        console.log(imagesLoaded + " " + imgArray.length + " images has been loaded");
+}
+
 
 // Scripts for image gallery
 
