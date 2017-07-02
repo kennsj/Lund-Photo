@@ -252,28 +252,22 @@ h2 {
 /* Content section */
 
 .content-wrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100vw;
     height: 100vh;
+    perspective: 300px;
     transition: .5s;
 }
 
 .content {
-    position: absolute;
-    top: 0;
-    left: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    perspective: 300px;
     width: 100vw;
     height: 100vh;
     transition: .5s;
